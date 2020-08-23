@@ -1,0 +1,215 @@
+/* css utk navbar umum semua ver*/
+/* kita pakai z index utk atur lapisan layer yg mana yg di depan (1) belakang nya baru background color */
+.navbar {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-brand {
+    font-family: viga;
+    font-size: 20px;
+}
+/* Jumbptron , back size cover agar penuh gambarnya otomatis dia akan muatkan sebesar gambar tsb,agar gambar bisa sampai atas maka papaki margin top - , */
+.jumbotron {
+  background-image: url(img/jumbotron-bg.jpg);
+  background-size: cover;
+  margin-top: -3px !important; 
+  height: 500px;
+  text-align: center; 
+  position: relative;
+  }
+
+ /* perhatikan syntax tulisan utk class div dan div tdk pakai koma , kalai div dan a / p yg lain pakai , */ 
+.jumbotron .container{
+    z-index: 1;
+    position: relative;
+}
+
+  /* untuk memberikan efek gradasi dari gambar tsb,kasih content kosong ,kasih posisi absolute tetap dan di jumbroton di atas kasih posisi relative ,pakai linear gradient to top jadi dari bawah ke atas dan hanya sampai 80% saja dari height nya */
+.jumbotron::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(to top, rgba(0,0,0,1),rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+}
+  /* akhir gradasi   */
+.jumbotron, .display-4{
+   color: white;
+   margin-top: 150px;
+   /* margin-left: 10px; bisa gunakan ini utk menentukan dimana kita mau taruh element nya margin nya saja di ukur atas dan kiri */ 
+   font-weight: 200;
+   font-size: 40px;
+   margin-bottom: -25px;
+}
+.jumbotron, .display-4 span{
+    font-weight: 700;
+}
+
+/* info panel , padding agar ada jarak di seluruh gambar */
+.info-panel {
+   box-shadow: 0 3px 20px rgb(0, 0, 0, 0.5);
+   border-radius: 12px;
+   margin-top: -100px;
+   background-color: white;
+   padding: 30px;
+}
+.info-panel img{
+    width: 80px;
+    height: 80px;
+     margin-right: 20px;
+    margin-bottom: 20px; 
+}
+.info-panel h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font: bold;
+}
+.info-panel p {
+    font-size: 14px;
+}
+/* akhir info panel  */
+
+/* workingspace , jarak dari gambar panel 120px , jika ver mobile center  , penulisan class bukan div div tdk pakai ,
+   tetapi langsung saja dan tdk pakai . juga */
+.workingspace{
+    margin-top: 100px;
+    text-align: center;
+}
+.workingspace h3{
+    font-size: 52px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+.workingspace h3 span{
+    font-weight: 500;
+}
+.workingspace p{
+    font-size: ;
+}
+/* akhir working space */
+
+/* Testimonial */
+.testimonial
+{
+    margin-top: 80px;
+}
+
+.testimonial h5{
+    text-align: center;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 22px;
+}
+/* margin top 20 , kanan kiri 15px ,bawah 5*/
+.testimonial figure img{
+   width: 70px;
+   margin: 20px 15px 5px ;
+   opacity: 0.5;
+}
+/* perhatikan cara tulis .utama dimana utama ini class yg di tambahkan di htmlnya hanya gambar 2 yg kondisi spt ini*/
+.testimonial figure img.utama {
+    width: 90px;
+    opacity: 1;
+    margin-top: 5px;
+}
+
+.testimonial figure h5{
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    color: #1c2c5d;
+}
+
+.testimonial figure p{
+    font-size: 14px;
+    color: rebeccapurple;
+    font-style: italic;
+    margin-top: -5px;
+}
+.testimonial figcaption{
+    text-align: center;
+}
+
+/* akhir testimonial */
+/* bisa gunakan ini jika mau ganti jenis hurufnya utk brand class di atas nya lalau class di maksud atau cona langsung ke kelas nya 
+   .container, .navbar-brand{
+     font-family: cursive;
+    }   */ 
+
+    .container, .navbar-link{
+    font-weight: bolder;
+    }
+
+/* footer */
+
+.footer p{
+    font-size: 16px;
+   color: royalblue;
+  }
+
+.footer p span{
+    font-style: italic;
+    font-size: 14px;
+}  
+
+/* Utility yg di pakai di banyak tempat , class tombol ini di tambahkan di join us */
+.tombol {
+    text-transform: uppercase;
+    border-radius: 40px;
+    }
+/* akhir utility */
+/* akhir css utk semua */
+
+/* desktop version */
+   /*  bisa kita gunakan ini jk media desktop maka pakai ini
+   jika mobile tdk usah , di saat ini jk destop huruf besar semua jika mobile spt di html */
+ @media (min-width: 992px) {
+    .nav-link{
+        text-transform: uppercase;
+        margin-right: 15px;
+    }
+  
+    /* lihat ini utk kasih warna pt ada di class navbar-brand , kata home dll ada di class nav link lihat cara tulis sekalian utk 2 class pakai , dan . nama class nya utk div dan lainnya jika div dan div tdk pakai koma lihat yg di atas jumbrtoon  */ 
+    .navbar-brand, .nav-link{
+        color: white !important;
+        text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.8)
+    }
+
+    /* .nav-link:hover {
+        border-bottom: 3px solid blue;
+        width: 50%;
+    } , kalau pakai ini garis nya tdk bisa 50% tetapi penuh maka pakai after  margin auto utk ketengah, padding bottom jarak ke garis ,margin bottom agar pd waktu di sorot tdk naik hurufnya kita kasih - sebanyak 3+5 px*/ 
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: blue 3px solid;
+        width: 50%;
+        margin: auto;
+        padding-bottom: 5px;
+        margin-bottom: -8px;
+    }
+    .jumbotron {
+     margin-top: -70px !important;
+     height: 640px;
+    }
+
+    .jumbotron, .display-4{
+        font-size: 62px;
+     }
+
+    .navbar-brand {
+      font-size: 32px;
+    }
+    /* kita balikan jika desktop tulisan rata kiri lagi */
+    .workingspace{
+        text-align: left;
+    }
+    .testimonial h5{
+       font-size: 32px;
+    }
+ }
+/* akhir desktop version 
